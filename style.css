@@ -1,0 +1,147 @@
+*box-sizing {
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    flex-direction: column;
+    overflow: hidden;
+    margin: 0; 
+    background-color: #011E22;
+}
+.container {
+  display: flex;
+  width: 80vw;
+}
+
+.section-title {
+	font-size: 28px;
+	margin-bottom: 20px;
+	padding-bottom: 20px;
+	font-weight: 400;
+	display: inline-block;
+	position: relative;
+    color: #56a5eb;
+}
+.section-title:after,
+.section-title:before {
+	content: "";
+	position: absolute;
+	bottom: 0;
+}
+.section-title:after {
+	height: 2px;
+	background-color: rgba(252, 92, 15, 0.46);
+	left: 25%;
+	right: 25%;
+}
+
+.section-title:before {
+	width: 15px;
+	height: 15px;
+	border: 3px solid #fff;
+	background-color: #fc5c0f;
+	left: 50%;
+	transform: translatex(-50%);
+	bottom: -6px;
+	z-index: 9;
+	border-radius: 50%;
+}
+
+.card{
+    background-size: auto 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 30vh;
+    border-radius: 20px;
+    color: #000;
+    cursor: pointer;
+    padding: 10px;
+    flex: 0.5;
+    margin: 20px;
+    position: relative;
+    /* background-color: #fff; */
+    transition: flex 0.7s ease-in;
+    background: #fff;
+box-shadow: 4px 4px 4px #97F806, -4px -4px 4px #97F806;
+}
+
+.flex-column{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+}
+.flex-center{
+    justify-content: center;
+    align-items: center;
+}
+
+
+img {
+    max-width: 100%;
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    margin-bottom: 15px;
+    display: inline-block;
+    z-index: 1;
+    align-items: center;
+    justify-self: center;
+    position: relative;
+  }
+
+  .checked {
+    color: orange;
+  }
+
+  h5 {
+    opacity: 0.8;
+    margin: 0;
+    font-weight: 800;
+  }
+  h5 span {
+    font-weight: 400;
+    text-transform: none;
+    display: block;
+  }
+.card h3{
+    font-size: 24px;
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    margin: 0;
+    opacity: 0;
+}
+.card.active{
+    flex: 2;
+}
+p #moreText{
+    display: none;
+}
+
+.card.active h3{
+    opacity: 1;
+
+}
+
+.card.active p #moreText{
+    transition: all 1s linear;
+  display: block;
+}
+.card.active p .more{
+    display: none;
+}
+
+@media(max-width:480px){
+    .container{
+        width: 100vw;
+    }
+    .card:nth-of-type(4),.card:nth-of-type(5){
+            display: none;
+    }
+}
